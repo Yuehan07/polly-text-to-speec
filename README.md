@@ -28,7 +28,23 @@ Illustrates how the text event is received and processed by the function.
 
 ![Test Output](https://github.com/Yuehan07/polly-text-to-speec/blob/main/test_output.png)
 
----
+## 📁 Project Files
+
+| File                    | Description                                                            |
+|-------------------------|------------------------------------------------------------------------|
+| `index.mjs`             | The main Lambda function using `@aws-sdk` to call Polly and store audio in S3 |
+| `Architectural Diagram.png` | AWS services architecture diagram                                  |
+| `code_output.png`       | Screenshot of Lambda log output after success                          |
+| `test_output.png`       | Screenshot of Lambda test event and its response                       |
+
+## 📝 Technical Notes
+
+- ✅ Uses **ES Module** syntax (`import` instead of `require`)
+- ✅ Requires **Node.js 18.x** Lambda runtime or newer
+- ✅ Polly voice is set to **"Joanna"**, and output format is **"mp3"**
+- 🧠 Ensure **S3 bucket and Lambda are in the same region** (e.g., `us-east-1`)
+- 🎯 Uploads are streamed efficiently using `@aws-sdk/lib-storage`'s `Upload` class
+
 
 ## 🧰 How to Deploy
 
@@ -56,23 +72,4 @@ Use the following JSON as your test event when invoking the Lambda function:
 {
   "text": "This is a demo to convert text to audio using Amazon Polly."
 }
-
-## 📁 Project Files
-
-| File                    | Description                                                            |
-|-------------------------|------------------------------------------------------------------------|
-| `index.mjs`             | The main Lambda function using `@aws-sdk` to call Polly and store audio in S3 |
-| `Architectural Diagram.png` | AWS services architecture diagram                                  |
-| `code_output.png`       | Screenshot of Lambda log output after success                          |
-| `test_output.png`       | Screenshot of Lambda test event and its response                       |
-
----
-
-## 📝 Technical Notes
-
-- ✅ Uses **ES Module** syntax (`import` instead of `require`)
-- ✅ Requires **Node.js 18.x** Lambda runtime or newer
-- ✅ Polly voice is set to **"Joanna"**, and output format is **"mp3"**
-- 🧠 Ensure **S3 bucket and Lambda are in the same region** (e.g., `us-east-1`)
-- 🎯 Uploads are streamed efficiently using `@aws-sdk/lib-storage`'s `Upload` class
 
