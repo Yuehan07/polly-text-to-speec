@@ -1,4 +1,4 @@
-# 🗣️ Amazon Polly Text-to-Speech (AWS Lambda + S3)
+# 🗣️ AWS Polly Text-to-Speech (AWS Lambda + S3)
 
 This project demonstrates how to convert plain text into lifelike speech using **Amazon Polly**, and store the resulting `.mp3` audio file in an **Amazon S3** bucket via **AWS Lambda**. This is ideal for building audio readers, newsletter narrators, or accessibility tools.
 
